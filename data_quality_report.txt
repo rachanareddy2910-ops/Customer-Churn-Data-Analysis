@@ -1,0 +1,58 @@
+CUSTOMER CHURN DATA QUALITY REPORT
+=============================================
+Original rows: 15
+Original columns: 11
+Final rows: 15
+Final columns: 11
+
+MISSING VALUES BEFORE CLEANING
+customerid          0
+gender              0
+age                 0
+tenuremonths        0
+subscriptiontype    0
+monthlycharges      0
+totalcharges        0
+contracttype        0
+supporttickets      0
+paymentmethod       0
+churn               0
+
+DUPLICATE ROWS BEFORE CLEANING
+0
+
+INVALID VALUES HANDLED
+{}
+
+OUTLIERS IDENTIFIED USING IQR
+{}
+
+CLEANING DECISIONS
+1. Removed exact duplicate rows.
+2. Kept the first record for duplicate customer IDs.
+3. Converted numeric fields into numeric data types.
+4. Replaced impossible negative numeric values with missing values.
+5. Filled missing numeric values with the median.
+6. Filled missing text values with Unknown.
+7. Standardized churned values to 0 and 1.
+8. Detected outliers using the IQR method.
+9. Outliers were reported but not automatically removed.
+
+FINAL VALIDATION
+Remaining missing values: 0
+Remaining duplicate rows: 0
+Rows excluded due to missing churn labels: 0
+
+SUMMARY STATISTICS
+       customerid  gender        age  tenuremonths subscriptiontype  monthlycharges  totalcharges    contracttype  supporttickets paymentmethod churn
+count          15      15  15.000000     15.000000               15       15.000000     15.000000              15       15.000000            15    15
+unique         15       2        NaN           NaN                3             NaN           NaN               3             NaN             4     2
+top     CUST-1001  Female        NaN           NaN            Basic             NaN           NaN  Month-to-Month             NaN   Credit Card    No
+freq            1       8        NaN           NaN                7             NaN           NaN               7             NaN             6     8
+mean          NaN     NaN  39.066667     18.800000              NaN       84.656667   2088.478667             NaN        2.533333           NaN   NaN
+std           NaN     NaN  11.392144     14.333776              NaN       42.739521   2407.365767             NaN        1.922300           NaN   NaN
+min           NaN     NaN  23.000000      2.000000              NaN       49.990000     99.980000             NaN        0.000000           NaN   NaN
+25%           NaN     NaN  30.000000      7.000000              NaN       49.990000    449.910000             NaN        1.000000           NaN   NaN
+50%           NaN     NaN  38.000000     15.000000              NaN       79.990000   1099.780000             NaN        2.000000           NaN   NaN
+75%           NaN     NaN  47.000000     27.000000              NaN      114.990000   3209.730000             NaN        4.000000           NaN   NaN
+max           NaN     NaN  60.000000     48.000000              NaN      149.990000   7199.520000             NaN        6.000000           NaN   NaN
